@@ -2,6 +2,8 @@
 <div class="row mt-3">
     <div class="col-md-8">
         <a href="<?= base_url("admin/panduan/add") ?>" class="btn btn-primary mb-2">Tambah Panduan</a>
+        <?= $this->session->flashdata("add"); ?>
+
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead class="thead-primary">
@@ -12,30 +14,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Surat Domisili</td>
-                        <td>
-                            <a class="btn btn-info mr-1" href="<?= base_url("admin/panduan/edit") ?>">edit</a>
-                            <a class="btn btn-danger" href="#">hapus</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Surat Pindah</td>
-                        <td>
-                            <a class="btn btn-info mr-1" href="<?= base_url("admin/panduan/edit") ?>">edit</a>
-                            <a class="btn btn-danger" href="#">hapus</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Surat Keterangan Usaha</td>
-                        <td>
-                            <a class="btn btn-info mr-1" href="<?= base_url("admin/panduan/edit") ?>">edit</a>
-                            <a class="btn btn-danger" href="#">hapus</a>
-                        </td>
-                    </tr>
+                    <?php foreach ($dokumen as $key => $value) : ?>
+                        <tr>
+                            <th scope="row"><?= $key + 1; ?></th>
+                            <td><?= $value['judul']; ?></td>
+                            <td>
+                                <a class="btn btn-info mr-1" href="<?= base_url("admin/panduan/edit/") . $value['panduan_id'] ?>">edit</a>
+                                <a class="btn btn-danger" href="<?= base_url("admin/panduan/delete/") . $value['panduan_id'] ?>" onclick="return confirm('Yakin mau dihapus ?');">hapus</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

@@ -1,10 +1,10 @@
 <h5>Tambah Panduan</h5>
 <div class="row">
     <div class="col-md-6">
-        <form class="">
+        <form action="<?= base_url("admin/panduan/save") ?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="judul">Judul</label>
-                <input type="text" class="form-control" id="judul" name="judul" placeholder="masukkan judul">
+                <input type="text" class="form-control" id="judul" name="judul" placeholder="masukkan judul" required>
             </div>
 
             <label for="judul">Upload File</label>
