@@ -86,17 +86,25 @@ class Panduan extends CI_Controller
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
+
+        $oldFile = $this->db->get_where('panduan', ['panduan_id' => $id])->row_array();
+        $where = ['panduan_id' => $id];
+
         if (!$this->upload->do_upload('file')) {
             print_r($this->upload->display_errors());
+            $data = [
+                'judul' => $this->input->post('judul'),
+                "path" => $oldFile['path']
+            ];
+            $update = $this->db->update('panduan', $data, $where);
+        } else {
+            $data = [
+                'judul' => $this->input->post('judul'),
+                "path" => $path . "/" . $this->upload->data()["file_name"]
+            ];
+            $update = $this->db->update('panduan', $data, $where);
         }
 
-        $where = ['panduan_id' => $id];
-        $data = [
-            'judul' => $this->input->post('judul'),
-            "path" => $path . "/" . $this->upload->data()["file_name"]
-        ];
-
-        $update = $this->db->update('panduan', $data, $where);
         if ($update) {
             $this->session->set_flashdata('add', '<div class="alert alert-success text-center">Sukses ubah data</div>');
             redirect('admin/panduan');

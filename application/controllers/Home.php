@@ -5,6 +5,7 @@ class Home extends CI_Controller
 {
 	public function index()
 	{
-		echo 'frontend';
+		$data['page'] = 'user/home/index';
+		$this->load->view('layouts/frontend/main_layout', $data);
 	}
 }
