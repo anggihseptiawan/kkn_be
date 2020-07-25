@@ -13,6 +13,10 @@ class Auth extends CI_Controller
 
     public function index()
     {
+        if ($this->session->userdata('email')) {
+            redirect('home');
+        }
+
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'password', 'trim|required');
 
@@ -109,9 +113,6 @@ class Auth extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('email');
-
-        $this->session->set_flashdata('message', '
-            <div class="alert alert-success" role="alert">Berhasil logout!</div>');
         redirect('home');
     }
 }

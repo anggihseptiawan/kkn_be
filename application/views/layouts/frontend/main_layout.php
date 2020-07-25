@@ -39,98 +39,47 @@
                 <div class="collapse navbar-collapse" id="menux">
                     <ul class="nav nav-pills  flex-column flex-lg-row  ml-auto" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link  bolded" id="pills-tab-1" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-home" aria-selected="true">Beranda</a>
+                            <a class="nav-link  bolded" href="<?= base_url("home") ?>">Beranda</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link  bolded" href="#">Surat Keterangan</a>
+                        </li>
 
-                            <div class="dropdown show">
-                                <a class="nav-link  bolded dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Surat Keterangan
-                                </a>
+                        <li class="nav-item">
+                            <a class="nav-link  bolded" href="#">Surat Rekomendasi</a>
+                        </li>
 
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <?php if ($this->session->userdata('email')) : ?>
 
-                                    <ul class="list-unstyled">
-                                        <li class="title">Layanan Surat Keterangan</li>
-                                        <li><a href="#">Keterangan Penduduk</a></li>
-                                        <li><a href="#">Keterangan Usaha</a></li>
-                                        <li><a href="#">Keterangan Pindah</a></li>
-                                        <li><a href="#">Keterangan Kematian</a></li>
-                                        <li><a href="#">Surat Keterangan</a></li>
-                                        <li><a href="#">Keterangan Ahli Waris</a></li>
-                                        <li><a href="#">Keterangan Berkelakuan Baik</a></li>
-                                        <li><a href="#">Keterangan Tidak Mampu</a></li>
-                                        <li><a href="#">Keterangan Tanah</a></li>
-                                        <li><a href="#">Keterangan Domisili</a></li>
-                                    </ul>
-
-
-
+                            <!-- Khusus user yang login -->
+                            <li class="nav-item">
+                                <div class="dropdown show">
+                                    <a class="nav-link bolded dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <?= $user['nama_lengkap']; ?>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">Profil Pengguna</a></li>
+                                            <li><a href="<?= base_url("auth/logout"); ?>">Log out</a></li>
+                                            <li><a href="<?= base_url("perizinan"); ?>">Status Pengajuan</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="dropdown">
 
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown show">
-                                <a class="nav-link  bolded dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Surat Rekomendasi
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <ul class="list-unstyled">
-                                        <li class="title">Layanan Surat Rekomendasi</li>
-                                        <li><a href="#">Pengurusan KK</a></li>
-                                        <li><a href="#">Pengurusan KTP</a></li>
-                                        <li><a href="#">Pengurusan Akta Lahir</a></li>
-                                        <li><a href="#">Pengurusan Akta Nikah</a></li>
-                                        <li><a href="#">Pengurusan IMB</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="dropdown">
+                            </li>
 
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class=" nav-link  bolded" id="pills-tab-2" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-blog" aria-selected="false">Profil</a>
-                        </li>
+                        <?php else : ?>
+                            <!-- Khusus user yang login -->
+                            <!-- Link Login dan daftar -->
+                            <li class="nav-item">
+                                <a class="nav-link bolded" href="<?= base_url("auth") ?>">Masuk</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link bolded" href="<?= base_url("auth/register") ?>">Daftar</a>
+                            </li>
+                            <!-- Link Login dan daftar -->
 
-                        <li class="nav-item">
-                            <a class=" nav-link  bolded" id="pills-tab-4" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-about" aria-selected="false">Kontak</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class=" nav-link  bolded" id="pills-tab-4" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-about" aria-selected="false">Kontak</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class=" nav-link  bolded" id="pills-tab-4" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-about" aria-selected="false">Kontak</a>
-                        </li>
-                        <!-- Khusus user yang login -->
-                        <li class="nav-item">
-                            <div class="dropdown show">
-                                <a class="nav-link  bolded dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    "nama user"
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">Profil Pengguna</a></li>
-                                        <li><a href="#">Log out</a></li>
-                                        <li><a href="#">Status Pengajuan Surat Keterangan</a></li>
-                                        <li><a href="#">Status Pengajuan Surat Rekomendasi</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                        </li>
-                        <!-- Khusus user yang login -->
-                        <!-- Link Login dan daftar -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url("auth") ?>">Masuk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url("auth/register") ?>">Daftar</a>
-                        </li>
-                        <!-- Link Login dan daftar -->
+                        <?php endif; ?>
                     </ul>
                 </div>
             </nav>
@@ -236,6 +185,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="<?= base_url("assets") ?>/js/main.js"></script>
 </body>
 
 </html>

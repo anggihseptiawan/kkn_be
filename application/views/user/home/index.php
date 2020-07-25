@@ -11,13 +11,13 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<?= base_url('assets'); ?>/img/slide1.png" alt="gambar1" width="1920" height="700">
+                    <img src="<?= base_url("assets"); ?>/img/slide.png" alt="gambar1" class="w-100 ">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('assets'); ?>/img/slide2.jpg" alt="gambar2" width="1920" height="700">
+                    <img src="<?= base_url("assets"); ?>/img/slide.png" alt="gambar2" class="w-100 ">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url('assets'); ?>/img/slide3.jpg" alt="gambar3" width="1920" height="700">
+                    <img src="<?= base_url("assets"); ?>/img/slide.png" alt="gambar3" class="w-100 ">
                 </div>
             </div>
 
@@ -37,12 +37,12 @@
         <div class="text-center">
             <div class="widget">
                 <div class="widget-title-outer">
-                    <h3 class="widget-title">Layanan Kependudukan</h3>
+                    <h3 class="widget-title text-dark">Layanan Kependudukan</h3>
                 </div>
             </div><!-- end widget -->
         </div>
 
-        <div class="card-columns">
+        <div class=" card-columns">
             <div class="card bg-light">
                 <div class="row card-body p-2 align-items-center">
                     <div class="col-md-3">
