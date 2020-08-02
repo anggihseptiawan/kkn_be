@@ -212,6 +212,8 @@ a {
 	position: fixed;
 	top: 0;
 	width: 100%;
+	left: 0;
+	right: 0;
 }
 
 .sticky + .posted {
@@ -427,10 +429,11 @@ p {
 	outline-color: #c8dadf;
 	background-color: #fff;
 }
-.box__dragndrop,
+/* .box__dragndrop,
 .box__icon {
 	display: none;
-}
+} */
+
 .box.has-advanced-upload .box__dragndrop {
 	display: inline;
 }

@@ -114,12 +114,12 @@
 				ajax.onload = function () {
 					form.classList.remove("is-uploading");
 					if (ajax.status >= 200 && ajax.status < 400) {
+						alert("Data Berhasil Terkirim, Mohon Tunggu!");
 						var data = JSON.parse(ajax.responseText);
 						form.classList.add(
 							data.success == true ? "is-success" : "is-error"
 						);
 						if (!data.success) errorMsg.textContent = data.error;
-						console.log(data);
 					} else alert("Error. Please, contact the webmaster!");
 				};
 

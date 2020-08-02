@@ -40,7 +40,7 @@
                 <select class="form-control form-control-user " id="fm_jenis" name="jenis" required="true">
                     <option value="0">Pilih Jenis Surat</option>
                     <option value="ktp">KTP</option>
-                    <option value="suart-pindah">Surat Pindah</option>
+                    <option value="surat-pindah">Surat Pindah</option>
                 </select>
             </div>
             <div class="form-group">

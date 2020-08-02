@@ -33,65 +33,68 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-12 navbar navbar-blog navbar-expand-lg navbar-light " id="myHeader">
-                <img class="logoku" src="<?= base_url("assets"); ?>/img/logo2.png" alt="Logo Cikolelet">
+    <div class="bg-light">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="col-md-12 navbar navbar-blog navbar-expand-lg navbar-light " id="myHeader">
+                    <img class="logoku" src="<?= base_url("assets"); ?>/img/logo2.png" alt="Logo Cikolelet">
 
-                <a class="bolded pl-10" href="<?= base_url("/"); ?>">CIKOLELET</a>
+                    <a class="bolded pl-10" href="<?= base_url("/"); ?>">CIKOLELET</a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menux">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menux">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="menux">
-                    <ul class="nav nav-pills  flex-column flex-lg-row  ml-auto" id="pills-tab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link  bolded" href="<?= base_url("home") ?>">Beranda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link  bolded" href="#">Surat Keterangan</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link  bolded" href="#">Surat Rekomendasi</a>
-                        </li>
-
-                        <?php if ($this->session->userdata('email')) : ?>
-
-                            <!-- Khusus user yang login -->
+                    <div class="collapse navbar-collapse" id="menux">
+                        <ul class="nav nav-pills  flex-column flex-lg-row  ml-auto" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                                <div class="dropdown show">
-                                    <a class="nav-link bolded dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <?= $user['nama_lengkap']; ?>
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                        <ul class="list-unstyled">
-                                            <li><a href="#">Profil Pengguna</a></li>
-                                            <li><a href="<?= base_url("auth/logout"); ?>">Log out</a></li>
-                                            <li><a href="<?= base_url("perizinan"); ?>">Status Pengajuan</a></li>
-                                        </ul>
+                                <a class="nav-link  bolded" href="<?= base_url("home") ?>">Beranda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  bolded" href="<?= base_url("SK") ?>">Surat Keterangan</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link  bolded" href="<?= base_url("SR") ?>">Surat Rekomendasi</a>
+                            </li>
+
+                            <?php if ($this->session->userdata('email')) : ?>
+
+                                <!-- Khusus user yang login -->
+                                <li class="nav-item">
+                                    <div class="dropdown show">
+                                        <a class="nav-link bolded dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <?= $user['nama_lengkap']; ?>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                            <ul class="list-unstyled">
+                                                <li><a href="<?= base_url("user"); ?>">Profil Pengguna</a></li>
+                                                <li><a href="<?= base_url("auth/logout"); ?>">Log out</a></li>
+                                                <li><a href="<?= base_url("perizinan"); ?>">Status Pengajuan</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
 
-                            </li>
+                                </li>
 
-                        <?php else : ?>
-                            <!-- Khusus user yang login -->
-                            <!-- Link Login dan daftar -->
-                            <li class="nav-item">
-                                <a class="nav-link bolded" href="<?= base_url("auth") ?>">Masuk</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link bolded" href="<?= base_url("auth/register") ?>">Daftar</a>
-                            </li>
-                            <!-- Link Login dan daftar -->
+                            <?php else : ?>
+                                <!-- Khusus user yang login -->
+                                <!-- Link Login dan daftar -->
+                                <li class="nav-item">
+                                    <a class="nav-link bolded" href="<?= base_url("auth") ?>">Masuk</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link bolded" href="<?= base_url("auth/register") ?>">Daftar</a>
+                                </li>
+                                <!-- Link Login dan daftar -->
 
-                        <?php endif; ?>
-                    </ul>
-                </div>
-            </nav>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </div>
+
     </div>
 
 
@@ -178,7 +181,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="<?= base_url("assets") ?>/js/jquery-3.4.1.min.js"></script>
-    <script src="<? = base_url("assets") ?>/js/main.js"></script>
+    <script src="<?= base_url("assets") ?>/js/main.js"></script>
     <script>
         window.onscroll = function() {
             myFunction()
