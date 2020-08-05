@@ -5,13 +5,13 @@
             <div class="list-group">
                 <?php if ($pengajuan) : ?>
                     <?php foreach ($pengajuan as $key => $value) : ?>
-                        <a href="javascript:void(0)" class="list-group-item list-group-item-action">
+                        <div class="list-group-item list-group-item-action">
                             <div class="descrption float-left">
-                                <p class="mb-0">Pengajuan <?= $value['jenis']; ?></p>
+                                <p class="mb-0">Pengajuan <span class="font-weight-bold"><?= str_replace('-', ' ', $value['jenis']); ?></span></p>
                                 <small class="d-block">Tanggal Permohonan : <?= $value['created_at']; ?> </small>
                             </div>
                             <p class="float-right badge <?= $value['status'] == 0 ? "badge-primary" : "badge-success" ?>"><?= $value['status'] == 0 ? "Menuggu" : "Diterima" ?></p>
-                        </a>
+                        </div>
                     <?php endforeach; ?>
                 <?php else : ?>
                     <div class="alert alert-primary">Belum ada pengajuan</div>
@@ -24,8 +24,11 @@
             <div class="form-group">
                 <select class="form-control form-control-user " id="fm_jenis" name="jenis" required="true">
                     <option value="0">Pilih Jenis Surat</option>
-                    <option value="ktp">KTP</option>
-                    <option value="surat-pindah">Surat Pindah</option>
+                    <option value="Surat-Keterangan-Usaha">Surat Keterangan Usaha</option>
+                    <option value="Surat-Keterangan-Pindah">Surat Keterangan Pindah</option>
+                    <option value="Surat-Keterangan-Kematian">Surat Keterangan Kematian</option>
+                    <option value="Surat-Keterangan-Pindah">Surat Keterangan Pindah</option>
+                    <option value="Surat-Keterangan-Domisili">Surat Keterangan Domisili</option>
                 </select>
             </div>
             <div class="form-group">

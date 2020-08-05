@@ -49,6 +49,7 @@ class Panduan extends CI_Controller
 
         $data = array(
             "judul" => $this->input->post("judul"),
+            "jenis" => $this->input->post("jenis"),
             "path" => $path . "/" . $this->upload->data()["file_name"]
         );
 
@@ -93,13 +94,15 @@ class Panduan extends CI_Controller
         if (!$this->upload->do_upload('file')) {
             print_r($this->upload->display_errors());
             $data = [
-                'judul' => $this->input->post('judul'),
+                "judul" => $this->input->post("judul"),
+                "jenis" => $this->input->post("jenis"),
                 "path" => $oldFile['path']
             ];
             $update = $this->db->update('panduan', $data, $where);
         } else {
             $data = [
-                'judul' => $this->input->post('judul'),
+                "judul" => $this->input->post("judul"),
+                "jenis" => $this->input->post("jenis"),
                 "path" => $path . "/" . $this->upload->data()["file_name"]
             ];
             $update = $this->db->update('panduan', $data, $where);

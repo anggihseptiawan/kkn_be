@@ -10,6 +10,7 @@
                     <tr>
                         <th scope="col">No.</th>
                         <th scope="col">Judul</th>
+                        <th scope="col">Jenis</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -18,6 +19,7 @@
                         <tr>
                             <th scope="row"><?= $key + 1; ?></th>
                             <td><?= $value['judul']; ?></td>
+                            <td><?= $value['jenis'] ? str_replace('-', " ", $value['jenis']) : ""; ?></td>
                             <td>
                                 <a class="btn btn-info mr-1" href="<?= base_url("admin/panduan/edit/") . $value['panduan_id'] ?>">edit</a>
                                 <a class="btn btn-danger" href="<?= base_url("admin/panduan/delete/") . $value['panduan_id'] ?>" onclick="return confirm('Yakin mau dihapus ?');">hapus</a>
