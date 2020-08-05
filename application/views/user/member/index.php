@@ -21,33 +21,32 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">NIK</th>
-
-                                    <td> 1111111111111111111111111</td>
+                                    <td><?= $nik; ?></td>
 
                                 </tr>
                                 <tr>
                                     <th scope="row">Nama Lengkap</th>
-                                    <td>Harun</td>
+                                    <td><?= $nama; ?></td>
 
                                 </tr>
                                 <tr>
                                     <th scope="row">Jenis Kelamin</th>
-                                    <td colspan="2">Laki-Laki</td>
+                                    <td colspan="2"><?= $gender; ?></td>
 
                                 </tr>
                                 <tr>
                                     <th scope="row">Tempat Lahir</th>
-                                    <td colspan="2">Tangerang</td>
+                                    <td colspan="2"><?= $tmp_lahir; ?></td>
 
                                 </tr>
                                 <tr>
                                     <th scope="row">Tanggal Lahir</th>
-                                    <td colspan="2">20/05/1068</td>
+                                    <td colspan="2"><?= $tgl_lahir; ?></td>
 
                                 </tr>
                                 <tr>
                                     <th scope="row">Alamat</th>
-                                    <td colspan="2">Cikolelet</td>
+                                    <td colspan="2"><?= $alamat; ?></td>
 
                                 </tr>
                             </tbody>
@@ -61,18 +60,17 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">Username</th>
-
-                                    <td> 1111111111111111111111111</td>
+                                    <td><?= $username; ?></td>
 
                                 </tr>
                                 <tr>
                                     <th scope="row">Nomor Hanphone</th>
-                                    <td>08xxxxxxx</td>
+                                    <td><?= $nohp; ?></td>
 
                                 </tr>
                                 <tr>
                                     <th scope="row">Email</th>
-                                    <td colspan="2">Alrosyid07@gmail.com</td>
+                                    <td colspan="2"><?= $email; ?></td>
 
                                 </tr>
 

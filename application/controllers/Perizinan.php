@@ -7,12 +7,15 @@ class Perizinan extends CI_Controller
     {
         $data['page'] = 'user/perizinan/index';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $data['pengajuan'] = $this->db->get_where('surat', ['user_id' => $data['user']['user_id']])->result_array();
+
         $this->load->view('layouts/frontend/main_layout', $data);
     }
 
     public function submit()
     {
-        $fileName = $_FILES["files"]["name"][1];
+        $fileName = $_FILES["files"]["name"];
         $fileName =  rand(2112, 9999) . "-" . $fileName;
 
         $path = "./uploads/perizinan/" . date("Y/m");
@@ -26,11 +29,14 @@ class Perizinan extends CI_Controller
 
         $this->load->library('upload', $config);
         $this->upload->initialize($config);
-        if (!$this->upload->do_upload('file')) {
+        if (!$this->upload->do_upload('files')) {
             print_r($this->upload->display_errors());
         }
 
+        $user = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
         $data =  [
+            "user_id" => $user['user_id'],
             "jenis" => $_POST["jenis"],
             "keterangan" => $_POST["keterangan"],
             "path" => $path . "/" . $fileName,
