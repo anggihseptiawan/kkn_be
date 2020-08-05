@@ -11,11 +11,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
--- Dumping database structure for admin_desa
-CREATE DATABASE IF NOT EXISTS `admin_desa` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `admin_desa`;
-
 -- Dumping structure for table admin_desa.admin
 CREATE TABLE IF NOT EXISTS `admin` (
   `id_admin` int(11) NOT NULL AUTO_INCREMENT,
@@ -38,18 +33,20 @@ INSERT INTO `admin` (`id_admin`, `name`, `email`, `image`, `password`, `is_activ
 CREATE TABLE IF NOT EXISTS `panduan` (
   `panduan_id` int(11) NOT NULL AUTO_INCREMENT,
   `judul` varchar(250) NOT NULL,
+  `jenis` varchar(100) NOT NULL,
   `path` varchar(250) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`panduan_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table admin_desa.panduan: ~4 rows (approximately)
 /*!40000 ALTER TABLE `panduan` DISABLE KEYS */;
-INSERT INTO `panduan` (`panduan_id`, `judul`, `path`, `created_at`) VALUES
-	(3, 'Test upload file 1', './uploads/2020/07/5652-PBO_-_Week_01_-_Java_Intro.pdf', '2020-07-23 14:46:05'),
-	(4, 'Test upload file 2', './uploads/2020/07/9965-Cost.pdf', '2020-07-23 15:02:24'),
-	(5, 'Test upload file 3', './uploads/2020/07//3205-', '2020-07-23 15:07:34'),
-	(6, 'Test upload file 4', './uploads/2020/07/7614-Grantt.pdf', '2020-07-25 16:40:27');
+INSERT INTO `panduan` (`panduan_id`, `judul`, `jenis`, `path`, `created_at`) VALUES
+	(4, 'Test upload file 2', '', './uploads/2020/07/9965-Cost.pdf', '2020-07-23 15:02:24'),
+	(5, 'Test upload file 3', '', './uploads/2020/07//3205-', '2020-07-23 15:07:34'),
+	(6, 'Test upload file 4', 'Surat-Keterangan-Domisili', './uploads/2020/08/9246-Presentasi_PP-1.docx', '2020-07-25 16:40:27'),
+	(7, 'Panduan Domisili', 'Surat-Keterangan-Domisili', './uploads/2020/08/6741-Presentasi_PP-1.docx', '2020-08-05 21:42:41'),
+	(8, 'Panduan Surat Usaha', 'Surat-Keterangan-Usaha', './uploads/2020/08/metodlit_170101002.doc', '2020-08-05 21:49:38');
 /*!40000 ALTER TABLE `panduan` ENABLE KEYS */;
 
 -- Dumping structure for table admin_desa.surat
@@ -62,13 +59,14 @@ CREATE TABLE IF NOT EXISTS `surat` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` int(1) NOT NULL,
   PRIMARY KEY (`surat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table admin_desa.surat: ~2 rows (approximately)
 /*!40000 ALTER TABLE `surat` DISABLE KEYS */;
 INSERT INTO `surat` (`surat_id`, `user_id`, `jenis`, `keterangan`, `path`, `created_at`, `status`) VALUES
 	(18, 1, 'ktp', 'Nyobain KTP cuyy', './uploads/perizinan/2020/08/4784-Quis pengantar sistem informasi.docx', '2020-08-04 21:37:45', 0),
-	(19, 1, 'surat-pindah', 'Ngajuin surat pindah', './uploads/perizinan/2020/08/5444-Quis pengantar sistem informasi.docx', '2020-08-04 21:47:53', 0);
+	(19, 1, 'surat-pindah', 'Ngajuin surat pindah', './uploads/perizinan/2020/08/5444-Quis pengantar sistem informasi.docx', '2020-08-04 21:47:53', 0),
+	(20, 1, 'Surat-Keterangan-Usaha', 'Mengajukan surat keterangan usaha', './uploads/perizinan/2020/08/5703-Presentasi PP-1.docx', '2020-08-05 21:59:23', 0);
 /*!40000 ALTER TABLE `surat` ENABLE KEYS */;
 
 -- Dumping structure for table admin_desa.user
