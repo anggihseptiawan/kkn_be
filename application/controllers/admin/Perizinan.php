@@ -13,7 +13,7 @@ class Perizinan extends CI_Controller
     public function index()
     {
         $data['page'] = 'admin/perizinan/index';
-        $data['pengajuan'] = $this->db->where('status !=', 1)->get('surat')->result_array();
+        $data['pengajuan'] = $this->db->where('status =', 0)->get('surat')->result_array();
         $this->load->view('layouts/backend/main_layout', $data);
     }
 
@@ -51,23 +51,36 @@ class Perizinan extends CI_Controller
             "user_id" =>  $surat["user_id"],
             "jenis" => $surat["jenis"],
             "keterangan" => $surat["keterangan"],
-            "path" => $path . "/" . $fileName,
+            "path" => $surat["path"],
+            "path_admin" => $path . "/" . $fileName,
             "status" => 1
         ];
 
         $update = $this->db->update('surat', $data_surat, $where);
 
-        $data =  [
-            "user_id" =>  $_POST["user_id"],
-            "jenis" => $_POST["jenis"],
-            "keterangan" => $_POST["keterangan"],
-            "path" => $path . "/" . $fileName,
-            "status" => 1
+        if ($update) {
+            die(json_encode(['success' => true, 'error' => false, 'message' => $_FILES["files"]["name"]]));
+        }
+    }
+
+
+    public function reject()
+    {
+        $where = ['surat_id' =>  $this->input->post('surat_id')];
+        $surat = $this->db->get_where('surat', $where)->row_array();
+        $data = [
+            "user_id" =>  $surat["user_id"],
+            "jenis" => $surat["jenis"],
+            "keterangan" => $surat["keterangan"],
+            "path" => $surat["path"],
+            "feedback" => $this->input->post("keterangan"),
+            "status" => 2
         ];
 
-        $insert = $this->db->insert('surat', $data);
-        if ($insert) {
-            die(json_encode(['success' => true, 'error' => false, 'message' => $_FILES["files"]["name"]]));
+        $update = $this->db->update('surat', $data, $where);
+        if ($update) {
+            $this->session->set_flashdata('add', '<div class="alert alert-success text-center">Sukses Tolak Pengajuan</div>');
+            redirect('admin/perizinan');
         }
     }
 }
