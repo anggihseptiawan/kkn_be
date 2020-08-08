@@ -16,6 +16,7 @@ class Perizinan extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $data['pengajuan'] = $this->db->get_where('surat', ['user_id' => $data['user']['user_id']])->result_array();
+        $data['active'] = 'user';
 
         $this->load->view('layouts/frontend/main_layout', $data);
     }

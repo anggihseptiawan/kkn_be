@@ -13,6 +13,8 @@ class Home extends CI_Controller
 	public function index()
 	{
 		$data['page'] = 'admin/home/index';
+		$data['active'] = 'home';
+		$data['user'] = $this->db->get_where('admin', ['email' => $this->session->userdata("email")])->row_array();
 		$this->load->view('layouts/backend/main_layout', $data);
 	}
 }

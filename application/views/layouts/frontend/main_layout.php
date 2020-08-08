@@ -48,14 +48,14 @@
                     <div class="collapse navbar-collapse" id="menux">
                         <ul class="nav nav-pills  flex-column flex-lg-row  ml-auto" id="pills-tab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link  bolded" href="<?= base_url("home") ?>">Beranda</a>
+                                <a class="nav-link bolded <?= $active == 'home' ? "active" : "" ?>" href="<?= base_url("home") ?>">Beranda</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  bolded" href="<?= base_url("SK") ?>">Surat Keterangan</a>
+                                <a class="nav-link bolded <?= $active == 'sk' ? "active" : "" ?>" href="<?= base_url("SK") ?>">Surat Keterangan</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link  bolded" href="<?= base_url("SR") ?>">Surat Rekomendasi</a>
+                                <a class="nav-link bolded <?= $active == 'sr' ? "active" : "" ?>" href="<?= base_url("SR") ?>">Surat Rekomendasi</a>
                             </li>
 
                             <?php if ($this->session->userdata('email')) : ?>
@@ -63,7 +63,7 @@
                                 <!-- Khusus user yang login -->
                                 <li class="nav-item">
                                     <div class="dropdown show">
-                                        <a class="nav-link bolded dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link bolded dropdown-toggle <?= $active == 'user' ? "active" : "" ?>" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <?= $user['nama_lengkap']; ?>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">

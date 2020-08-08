@@ -247,6 +247,10 @@ a.icons :hover {
 	color: #3aaade;
 }
 
+a.bolded.active {
+	color: #3aaade !important;
+}
+
 .btn-danger {
 	border-radius: 0.5rem;
 }
