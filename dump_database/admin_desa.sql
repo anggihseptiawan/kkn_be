@@ -21,12 +21,13 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `is_active` int(11) NOT NULL DEFAULT '1',
   `created_at` date DEFAULT NULL,
   PRIMARY KEY (`id_admin`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table admin_desa.admin: ~1 rows (approximately)
+-- Dumping data for table admin_desa.admin: ~2 rows (approximately)
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
 INSERT INTO `admin` (`id_admin`, `name`, `email`, `image`, `password`, `is_active`, `created_at`) VALUES
-	(3, 'Admin', 'admin@gmail.com', 'default.jpg', '$2y$10$umxUroKR2lDI11kiKFZz9uzr5PtQ4rS.tvxvSn1qtRSb4J9cY44HW', 1, '0000-00-00');
+	(3, 'Admin', 'admin@gmail.com', 'default.jpg', '$2y$10$umxUroKR2lDI11kiKFZz9uzr5PtQ4rS.tvxvSn1qtRSb4J9cY44HW', 1, '0000-00-00'),
+	(4, 'Dodi mulyono', 'dodi@gmail.com', 'default.jpg', '$2y$10$zb.tnYvCzaSFmXLQ8PybWezbyfrp/VlzeTxVSELsz.952WMiu17TK', 1, '0000-00-00');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 -- Dumping structure for table admin_desa.panduan
@@ -39,14 +40,8 @@ CREATE TABLE IF NOT EXISTS `panduan` (
   PRIMARY KEY (`panduan_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
--- Dumping data for table admin_desa.panduan: ~4 rows (approximately)
+-- Dumping data for table admin_desa.panduan: ~5 rows (approximately)
 /*!40000 ALTER TABLE `panduan` DISABLE KEYS */;
-INSERT INTO `panduan` (`panduan_id`, `judul`, `jenis`, `path`, `created_at`) VALUES
-	(4, 'Test upload file 2', '', './uploads/2020/07/9965-Cost.pdf', '2020-07-23 15:02:24'),
-	(5, 'Test upload file 3', '', './uploads/2020/07//3205-', '2020-07-23 15:07:34'),
-	(6, 'Test upload file 4', 'Surat-Keterangan-Domisili', './uploads/2020/08/9246-Presentasi_PP-1.docx', '2020-07-25 16:40:27'),
-	(7, 'Panduan Domisili', 'Surat-Keterangan-Domisili', './uploads/2020/08/6741-Presentasi_PP-1.docx', '2020-08-05 21:42:41'),
-	(8, 'Panduan Surat Usaha', 'Surat-Keterangan-Usaha', './uploads/2020/08/metodlit_170101002.doc', '2020-08-05 21:49:38');
 /*!40000 ALTER TABLE `panduan` ENABLE KEYS */;
 
 -- Dumping structure for table admin_desa.surat
@@ -56,17 +51,15 @@ CREATE TABLE IF NOT EXISTS `surat` (
   `jenis` varchar(50) NOT NULL,
   `keterangan` text NOT NULL,
   `path` varchar(255) NOT NULL,
+  `path_admin` varchar(255) DEFAULT NULL,
+  `feedback` varchar(500) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` int(1) NOT NULL,
   PRIMARY KEY (`surat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
--- Dumping data for table admin_desa.surat: ~2 rows (approximately)
+-- Dumping data for table admin_desa.surat: ~7 rows (approximately)
 /*!40000 ALTER TABLE `surat` DISABLE KEYS */;
-INSERT INTO `surat` (`surat_id`, `user_id`, `jenis`, `keterangan`, `path`, `created_at`, `status`) VALUES
-	(18, 1, 'ktp', 'Nyobain KTP cuyy', './uploads/perizinan/2020/08/4784-Quis pengantar sistem informasi.docx', '2020-08-04 21:37:45', 0),
-	(19, 1, 'surat-pindah', 'Ngajuin surat pindah', './uploads/perizinan/2020/08/5444-Quis pengantar sistem informasi.docx', '2020-08-04 21:47:53', 0),
-	(20, 1, 'Surat-Keterangan-Usaha', 'Mengajukan surat keterangan usaha', './uploads/perizinan/2020/08/5703-Presentasi PP-1.docx', '2020-08-05 21:59:23', 0);
 /*!40000 ALTER TABLE `surat` ENABLE KEYS */;
 
 -- Dumping structure for table admin_desa.user
@@ -83,12 +76,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   `tgl_lahir` date NOT NULL,
   `alamat` varchar(250) NOT NULL DEFAULT '',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table admin_desa.user: ~0 rows (approximately)
+-- Dumping data for table admin_desa.user: ~2 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `email`, `password`, `username`, `nohp`, `nik`, `nama_lengkap`, `gender`, `tmp_lahir`, `tgl_lahir`, `alamat`) VALUES
-	(1, 'admin@gmail.com', '$2y$10$YgKRrY8k5/SUzNryQvIcZOWbseqnWAXZf3zsb1EG8rWhfTnKtp2GC', 'admin', '927937242918', '1234567891234567', 'Anggih Septiawan', 'laki-laki', 'Tegal', '2020-07-25', 'test');
+	(1, 'admin@gmail.com', '$2y$10$YgKRrY8k5/SUzNryQvIcZOWbseqnWAXZf3zsb1EG8rWhfTnKtp2GC', 'admin', '927937242918', '1234567891234567', 'Anggih Septiawan', 'laki-laki', 'Tegal', '2020-07-25', 'test'),
+	(2, 'aldo@gmail.com', '$2y$10$IXTJoYJGu/sdkIqObABN2Oc84QpGpoJjv4.6G277wOhwt8EuEz.oa', 'aldo', '0939483984', '123456724567', 'Aldo Lesmana', 'laki-laki', 'Tegal', '1997-06-05', 'Jl. Kebayoran lama');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

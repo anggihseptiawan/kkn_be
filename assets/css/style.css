@@ -14,9 +14,13 @@ body {
 	color: var(--color-text);
 	overflow-x: hidden;
 }
-main {
+/* main {
 	padding: 0 20px;
+} */
+main.main_content {
+	padding-top: 62px;
 }
+
 .jumbotron {
 	background-image: url(images/banner-main.jpg);
 	margin-bottom: 0;
@@ -322,7 +326,6 @@ footer {
 	width: 100%;
 	height: 50px;
 	padding-left: 10px;
-	line-height: 50px;
 	bottom: 0px;
 }
 
@@ -341,7 +344,8 @@ footer {
 	padding: 0 0.5rem;
 }
 .logo-footer {
-	width: 40%;
+	width: 100px;
+	margin-right: 10px;
 }
 .head-footer {
 	background: rgba(58, 170, 222, 0.8);
@@ -359,10 +363,6 @@ footer {
 }
 .like {
 	margin-right: 10px;
-}
-
-p {
-	line-height: 31px;
 }
 
 @media (max-width: 768px) {
@@ -396,6 +396,10 @@ p {
 	.footer {
 		padding: 1rem;
 	}
+	.logo-footer {
+		width: 70px;
+		height: 95px;
+	}
 }
 
 @media (max-width: 991px) {
@@ -406,6 +410,15 @@ p {
 		margin: 0 auto;
 		padding-top: 2rem;
 		color: black;
+	}
+}
+
+@media (min-width: 576px) {
+	#myHeader {
+		padding: 10px 45px;
+	}
+	footer .widget {
+		margin-left: 45px;
 	}
 }
 

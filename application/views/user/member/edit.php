@@ -19,32 +19,29 @@
                         <div class="widget-title-outer">
                             <h3 class="widget-title">Informasi Diri</h3>
                         </div>
-                        <form class="user" method="post">
+                        <form class="user" action="<?= base_url("user/update"); ?>" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="nik" name="nik" placeholder="321xxxxx" value="" pattern="[0-9]{16}">
+                                <input type="text" class="form-control" name="nik" value="<?= $nik; ?>">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Harun" value="">
+                                <input type="text" class="form-control" name="nama" value="<?= $nama; ?>">
                             </div>
                             <div class="form-group">
-                                <select class="form-control" id="jk" name="jk" required="true">
-                                    <option value="0">Pilih Jenis Kelamin</option>
-                                    <option value="laki-laki">Laki-laki</option>
-                                    <option value="perempuan">Perempuan</option>
+                                <select class="form-control" name="gender" required="true">
+                                    <option value="laki-laki" <?= $gender == 'laki-laki' ? "selected" : "" ?>>Laki-laki</option>
+                                    <option value="perempuan" <?= $gender == 'perempuan' ? "selected" : "" ?>>Perempuan</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="tl" name="tl" placeholder="Tangerang" value="">
+                                <input type="text" class="form-control" name="tmp_lahir" value="<?= $tmp_lahir; ?>">
                             </div>
                             <div class="form-group">
-                                <input type="date" class="form-control" id="tgl" name="tgl" placeholder="22/07/1968" value="">
+                                <input type="date" class="form-control" name="tgl_lahir" value="<?= $tgl_lahir; ?>">
                             </div>
 
                             <div class="form-group">
-                                <textarea type="ttex" class="form-control" id="alamat" name="alamat" placeholder="Cikolelet" value=""></textarea>
+                                <textarea type="text" class="form-control" name="alamat" value="<?= $alamat; ?>"><?= $alamat; ?></textarea>
                             </div>
-
-
 
                             <div class="widget-title-outer">
                                 <h3 class="widget-title">Data Akun</h3>
@@ -52,16 +49,13 @@
 
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Harun" value="">
+                                <input type="text" class="form-control" id="username" name="username" value="<?= $username; ?>">
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control" id="hp" name="hp" placeholder="08xxxxxx" value="" pattern="[0-9]{12} ">
+                                <input type="tel" class="form-control" name="nohp" value="<?= $nohp; ?>">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Alrosyid07@gmail.com" value="">
-                            </div>
-                            <div class="form-group ">
-                                <input type="password" class="form-control" id="password" name="password" value="" placeholder="********">
+                                <input type="email" class="form-control" name="email" value="<?= $email; ?>">
                             </div>
 
                             <button type="submit" class="btnSubmit w-100">Simpan Perubahan</button>
