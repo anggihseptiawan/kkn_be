@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row  mt-5 justify-content-center">
 
-            <div class="col-md-8">
+            <div class="card col-md-8">
                 <div class="card-header py-3">
                     <h2 class="m-0 font-weight-bold text-primaries ">Profil Pengguna</h2>
 
@@ -77,7 +77,8 @@
                             </tbody>
 
                         </table>
-                        <a href="<?= base_url("user/edit") ?>" class="btnSubmit w-100 d-block text-center">Edit Profil</a>
+                        <!-- <a href="<? //= base_url("user/edit") 
+                                        ?>" class="btnSubmit w-100 d-block text-center">Edit Profil</a> -->
 
                     </div>
 

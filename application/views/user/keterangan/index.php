@@ -148,7 +148,7 @@
 							<li class="nav-item">
 								<?php
 								foreach ($panduan as $key => $value) :
-									if ($value['jenis'] == 'Surat-Keterangan-Pembuatan-Kartu-Keluarga') : ?>
+									if ($value['jenis'] == 'Surat-Keterangan-Kartu-Keluarga') : ?>
 										<a href="<?= base_url() . str_replace(" ", '_', $value['path']) ?>" class="btn btn-success btn-icon-split ml-3" download="">
 											<span class="icon text-white-50">
 												<i class="fas fa-arrow-down"></i>

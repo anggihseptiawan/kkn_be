@@ -15,6 +15,8 @@
                     <option value="Surat-Keterangan-Kematian" <?= $file['jenis'] == "Surat-Keterangan-Kematian" ? "selected" : ""; ?>>Surat Keterangan Kematian</option>
                     <option value="Surat-Keterangan-Pindah" <?= $file['jenis'] == "Surat-Keterangan-Pindah" ? "selected" : ""; ?>>Surat Keterangan Pindah</option>
                     <option value="Surat-Keterangan-Domisili" <?= $file['jenis'] == "Surat-Keterangan-Domisili" ? "selected" : ""; ?>>Surat Keterangan Domisili</option>
+                    <option value="Surat-Keterangan-Tidak-Mampu" <?= $file['jenis'] == "Surat-Keterangan-Tidak-Mampu" ? "selected" : ""; ?>>Surat Keterangan Tidak Mampu</option>
+                    <option value="Surat-Keterangan-Ahli-Waris" <?= $file['jenis'] == "Surat-Keterangan-Ahli-Waris" ? "selected" : ""; ?>>Surat Keterangan Ahli Waris</option>
                 </select>
             </div>
 

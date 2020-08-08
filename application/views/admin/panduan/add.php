@@ -11,10 +11,12 @@
                 <label for="judul">Jenis Panduan</label>
                 <select class="form-control form-control-user " id="fm_jenis" name="jenis" required="true">
                     <option value="Surat-Keterangan-Usaha">Surat Keterangan Usaha</option>
-                    <option value="Surat-Keterangan-Pindah">Surat Keterangan Pindah</option>
+                    <option value="Surat-Keterangan-Kartu-Keluarga">Surat Keterangan Kartu Keluarga</option>
                     <option value="Surat-Keterangan-Kematian">Surat Keterangan Kematian</option>
                     <option value="Surat-Keterangan-Pindah">Surat Keterangan Pindah</option>
                     <option value="Surat-Keterangan-Domisili">Surat Keterangan Domisili</option>
+                    <option value="Surat-Keterangan-Tidak-Mampu">Surat Keterangan Tidak Mampu</option>
+                    <option value="Surat-Keterangan-Ahli-Waris">Surat Keterangan Ahli Waris</option>
                 </select>
             </div>
 
