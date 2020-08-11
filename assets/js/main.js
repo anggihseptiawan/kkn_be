@@ -27,9 +27,17 @@
 						: files[0].name;
 			},
 			triggerFormSubmit = function () {
-				var event = document.createEvent("HTMLEvents");
-				event.initEvent("submit", true, false);
-				form.dispatchEvent(event);
+				const jenis = document.getElementById("fm_jenis");
+				const ket = document.getElementById("fm_keterangan");
+				if (jenis.value == 0 || ket.value == "") {
+					alert(
+						"Silahkan isi jenis dan keterangan dan upload ulang berkas anda!"
+					);
+				} else {
+					var event = document.createEvent("HTMLEvents");
+					event.initEvent("submit", true, false);
+					form.dispatchEvent(event);
+				}
 			};
 
 		// letting the server side to know we are going to make an Ajax request
@@ -114,13 +122,13 @@
 				ajax.onload = function () {
 					form.classList.remove("is-uploading");
 					if (ajax.status >= 200 && ajax.status < 400) {
-						alert("Data Berhasil Terkirim, Mohon Tunggu!");
+						alert("Selamat, Data Berhasil Terkirim!");
 						var data = JSON.parse(ajax.responseText);
 						form.classList.add(
 							data.success == true ? "is-success" : "is-error"
 						);
 						if (!data.success) errorMsg.textContent = data.error;
-					} else alert("Error. Please, contact the webmaster!");
+					} else alert("Error. Pastikan format file didukung!");
 				};
 
 				ajax.onerror = function () {

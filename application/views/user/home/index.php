@@ -11,13 +11,13 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<?= base_url("assets"); ?>/img/slide.png" alt="gambar1" class="w-100 ">
+                    <img src="<?= base_url("assets"); ?>/img/slide1.png" alt="gambar1" class="w-100 ">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url("assets"); ?>/img/slide.png" alt="gambar2" class="w-100 ">
+                    <img src="<?= base_url("assets"); ?>/img/slide2.png" alt="gambar2" class="w-100 ">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?= base_url("assets"); ?>/img/slide.png" alt="gambar3" class="w-100 ">
+                    <img src="<?= base_url("assets"); ?>/img/slide3.png" alt="gambar3" class="w-100 ">
                 </div>
             </div>
 
@@ -49,8 +49,8 @@
                         <img src="<?= base_url("assets") ?>/img/main-logo.png" style="width:100%">
                     </div>
                     <div class="col-sm-9">
-                        <p class="card-title font-weight-bold">Kolom 1</p>
-                        <p class="card-text">Some text inside the first card</p>
+                        <p class="card-title font-weight-bold">Surat Keterangan Usaha</p>
+                        <p class="card-text">Jam Pelayanan : 08:30 - 16:00</p>
                     </div>
                 </div>
             </div>
@@ -61,8 +61,8 @@
                         <img src="<?= base_url("assets") ?>/img/main-logo.png" style="width:100%">
                     </div>
                     <div class="col-sm-9">
-                        <p class="card-title font-weight-bold">Kolom 1</p>
-                        <p class="card-text">Some text inside the first card</p>
+                        <p class="card-title font-weight-bold">Kartu Keluarga</p>
+                        <p class="card-text">Jam Pelayanan : 08:30 - 16:00</p>
                     </div>
                 </div>
             </div>
@@ -73,8 +73,8 @@
                         <img src="<?= base_url("assets") ?>/img/main-logo.png" style="width:100%">
                     </div>
                     <div class="col-sm-9">
-                        <p class="card-title font-weight-bold">Kolom 1</p>
-                        <p class="card-text">Some text inside the first card</p>
+                        <p class="card-title font-weight-bold">Surat Keterangan Pindah</p>
+                        <p class="card-text">Jam Pelayanan : 08:30 - 16:00</p>
                     </div>
                 </div>
             </div>
@@ -85,8 +85,8 @@
                         <img src="<?= base_url("assets") ?>/img/main-logo.png" style="width:100%">
                     </div>
                     <div class="col-sm-9">
-                        <p class="card-title font-weight-bold">Kolom 1</p>
-                        <p class="card-text">Some text inside the first card</p>
+                        <p class="card-title font-weight-bold">Pencatatan Kelahiran</p>
+                        <p class="card-text">Jam Pelayanan : 08:30 - 16:00</p>
                     </div>
                 </div>
             </div>
@@ -97,8 +97,8 @@
                         <img src="<?= base_url("assets") ?>/img/main-logo.png" style="width:100%">
                     </div>
                     <div class="col-sm-9">
-                        <p class="card-title font-weight-bold">Kolom 1</p>
-                        <p class="card-text">Some text inside the first card</p>
+                        <p class="card-title font-weight-bold">Pencatatan Kematian</p>
+                        <p class="card-text">Jam Pelayanan : 08:30 - 16:00</p>
                     </div>
                 </div>
             </div>
@@ -109,8 +109,8 @@
                         <img src="<?= base_url("assets") ?>/img/main-logo.png" style="width:100%">
                     </div>
                     <div class="col-sm-9">
-                        <p class="card-title font-weight-bold">Kolom 1</p>
-                        <p class="card-text">Some text inside the first card</p>
+                        <p class="card-title font-weight-bold">Surat Keterangan Domisili</p>
+                        <p class="card-text">Jam Pelayanan : 08:30 - 16:00</p>
                     </div>
                 </div>
             </div>

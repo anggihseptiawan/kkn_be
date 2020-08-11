@@ -68,20 +68,21 @@ class Auth extends CI_Controller
         // rules
         // params 1 (name), params 2 (alias), params 3 (rules nya)
         // rules is_unique digunakan untuk mengecek apakah email yg diinput sudah terdaftar di databse apa belum.
-        // $this->form_validation->set_rules('username', 'Username', 'required|trim');
-        // $this->form_validation->set_rules('nik', 'NIK', 'required|trim');
-        // $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|trim');
-        // $this->form_validation->set_rules('gender', 'Jenis Kelamin', 'required|trim');
-        // $this->form_validation->set_rules('tmp_lahir', 'Tempat Lahir', 'required|trim');
-        // $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required|trim');
+
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'Email sudah terdaftar '
         ]);
-        $this->form_validation->set_rules('nohp', 'No Handphone', 'required|trim|max_length[13]');
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
             'matches' => 'Password tidak cocok!',
             'min_length' => 'Password terlalu pendek'
         ]);
+        $this->form_validation->set_rules('username', 'Username', 'required|trim');
+        $this->form_validation->set_rules('nohp', 'No Handphone', 'required|trim|max_length[13]');
+        $this->form_validation->set_rules('nik', 'NIK', 'required|trim');
+        $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|trim');
+        $this->form_validation->set_rules('gender', 'Jenis Kelamin', 'required|trim');
+        $this->form_validation->set_rules('tmp_lahir', 'Tempat Lahir', 'required|trim');
+        $this->form_validation->set_rules('tgl_lahir', 'Tanggal Lahir', 'required|trim');
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
 
         if ($this->form_validation->run() == false) {

@@ -52,17 +52,17 @@ class Auth extends CI_Controller
                 } else {
                     $this->session->set_flashdata('message', '
                     <div class="alert alert-danger" role="alert">Password Salah!</div>');
-                    redirect('auth');
+                    redirect('admin/auth');
                 }
             } else {
                 $this->session->set_flashdata('message', '
                     <div class="alert alert-danger" role="alert">Email belum di aktivasi!</div>');
-                redirect('auth');
+                redirect('admin/auth');
             }
         } else {
             $this->session->set_flashdata('message', '
                 <div class="alert alert-danger" role="alert">Email tidak terdaftar!</div>');
-            redirect('auth');
+            redirect('admin/auth');
         }
     }
 
@@ -77,7 +77,7 @@ class Auth extends CI_Controller
         // rules is_unique digunakan untuk mengecek apakah email yg diinput sudah terdaftar di databse apa belum.
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[admin.email]', [
-            'is_unique' => 'this email has already registered '
+            'is_unique' => 'email sudah terdaftar'
         ]);
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|matches[password2]', [
             'matches' => 'Password tidak cocok!',
@@ -103,7 +103,7 @@ class Auth extends CI_Controller
             // insert ke database
             $this->db->insert('admin', $data);
             $this->session->set_flashdata('message', '
-            <div class="alert alert-success" role="alert">Selamat, akun anda telah terdaftar</div>');
+                <div class="alert alert-success" role="alert">Selamat, akun anda telah terdaftar</div>');
             redirect('admin/auth');
         }
     }

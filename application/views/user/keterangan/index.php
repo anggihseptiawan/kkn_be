@@ -671,26 +671,13 @@
 						<div class="tab-content pt-2 pl-1" id="pills-tabContent">
 							<div class="tab-pane fade show active content" id="pills-rules5" role="tabpanel" aria-labelledby="pills-rules5-tab">
 								<div id="no-more-tables">
-									<table class="col-md-12 table-bordered table-striped table-condensed cf">
-										<thead class="cf">
-											<tr>
-												<th>No</th>
-												<th>Persyaratan</th>
+									<?php foreach ($persyaratan as $key => $value) :
+										if ($value['jenis'] == 1) : ?>
 
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td data-title="No">1</td>
-												<td data-title="Persyaratan">Jika dikuasakan (Surat kuasa di atas kertas bermaterai RP 6.000,KTP orang yang diberi kuasa)</td>
-											</tr>
-											<tr>
-												<td data-title="No">1</td>
-												<td data-title="Persyaratan">Jika dikuasakan (Surat kuasa di atas kertas bermaterai RP 6.000,KTP orang yang diberi kuasa)</td>
-											</tr>
+											<?= $value['deskripsi']; ?>
 
-										</tbody>
-									</table>
+									<?php endif;
+									endforeach; ?>
 								</div>
 							</div>
 							<div class="tab-pane fade content" id="pills-pelayanan5" role="tabpanel" aria-labelledby="pills-pelayanan5-tab">

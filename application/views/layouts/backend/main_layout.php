@@ -17,6 +17,8 @@
   <link href="<?= base_url('assets') ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
+  <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+
   <!-- Custom styles for this template-->
   <link href="<?= base_url('assets') ?>/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="<?= base_url('assets') ?>/css/admin.css" rel="stylesheet">
@@ -90,6 +92,13 @@
         <a class="nav-link" href="<?= base_url("admin/panduan") ?>">
           <i class="fas fa-fw fa-book"></i>
           <span>Panduan</span></a>
+      </li>
+
+      <!-- Panduan, berisi tentang file-file contoh surat perizinan untuk pengguna-->
+      <li class="nav-item <?= $active == 'persyaratan' ? "active" : ""; ?>">
+        <a class="nav-link" href="<?= base_url("admin/persyaratan") ?>">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Persyaratan</span></a>
       </li>
 
       <!-- Nav Item - Tables -->
@@ -261,6 +270,15 @@
       let fileName = $(this).val().split('\\').pop();
       $(this).next('.custom-file-label').addClass("selected").html(fileName);
     });
+
+    ClassicEditor
+      .create(document.querySelector('#persyaratan'))
+      .then(editor => {
+        console.log(editor);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   </script>
 
 </body>
