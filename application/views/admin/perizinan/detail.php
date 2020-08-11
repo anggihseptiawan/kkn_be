@@ -1,5 +1,5 @@
 <h5>Detail Pemohon</h5>
-<p>Nama : <?= $user['nama_lengkap']; ?></p>
+<p>Nama : <?= $pemohon['nama_lengkap']; ?></p>
 <p>File Perizinan : <a href="<?= base_url() . str_replace(' ', '_', $surat['path']) ?>" download>Download</a> </p>
 
 <h5 class="mt-4">Kirim berkas ke pemohon</h5>

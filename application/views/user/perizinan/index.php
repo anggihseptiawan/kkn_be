@@ -18,6 +18,8 @@
                 <textarea type="text" class="form-control form-control-user " id="fm_keterangan" name="keterangan" placeholder="keterangan" value="" required="true"></textarea>
             </div>
 
+            <p>** Tipe file yang dizinkan : doc | docx | pdf | xls | xlsx</p>
+
             <form method="post" action="<?= base_url("perizinan/submit"); ?>" enctype="multipart/form-data" novalidate class="box">
 
                 <div class="box__input">

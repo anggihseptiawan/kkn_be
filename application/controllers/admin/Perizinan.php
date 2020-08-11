@@ -23,7 +23,7 @@ class Perizinan extends CI_Controller
     {
         $data['page'] = 'admin/perizinan/detail';
         $data['active'] = 'perizinan';
-        $data['user'] = $this->db->where(['user_id' => $user_id])->get('user')->row_array();
+        $data['pemohon'] = $this->db->where(['user_id' => $user_id])->get('user')->row_array();
         $data['surat'] = $this->db->where(['surat_id' => $surat_id])->get('surat')->row_array();
         $data['user'] = $this->db->get_where('admin', ['email' => $this->session->userdata("email")])->row_array();
         $this->load->view('layouts/backend/main_layout', $data);

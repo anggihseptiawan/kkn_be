@@ -2,7 +2,7 @@
 <?= $this->session->flashdata('message'); ?>
 <div class="list-group mb-4">
     <?php foreach ($layanan as $key => $value) : ?>
-        <a href="<?= base_url("admin/persyaratan/detail/") . $value['layanan_id']; ?>" class="list-group-item list-group-item-action">
+        <a href="<?= base_url("admin/mekanisme/detail/") . $value['layanan_id']; ?>" class="list-group-item list-group-item-action">
             <div class="descrption float-left">
                 <p class="mb-0"><?= str_replace("-", " ", $value["nama"]); ?></p>
             </div>

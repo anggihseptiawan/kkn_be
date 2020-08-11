@@ -101,6 +101,13 @@
           <span>Persyaratan</span></a>
       </li>
 
+      <!-- Panduan, berisi tentang file-file contoh surat perizinan untuk pengguna-->
+      <li class="nav-item <?= $active == 'mekanisme' ? "active" : ""; ?>">
+        <a class="nav-link" href="<?= base_url("admin/mekanisme") ?>">
+          <i class="fas fa-fw fa-book"></i>
+          <span>Mekanisme</span></a>
+      </li>
+
       <!-- Nav Item - Tables -->
       <li class="nav-item <?= $active == 'perizinan' ? "active" : ""; ?>">
         <a class="nav-link" href="<?= base_url("admin/perizinan") ?>">
@@ -263,7 +270,7 @@
   <!-- Page level custom scripts -->
   <script src="<?= base_url('assets') ?>/js/demo/chart-area-demo.js"></script>
   <script src="<?= base_url('assets') ?>/js/demo/chart-pie-demo.js"></script>
-  <script src="<?= base_url("assets") ?>/js/main.js"></script>
+  <script src="<?= base_url("assets") ?>/js/admin.js"></script>
 
   <script>
     $('.custom-file-input').on('change', function() {
@@ -273,6 +280,15 @@
 
     ClassicEditor
       .create(document.querySelector('#persyaratan'))
+      .then(editor => {
+        console.log(editor);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+    ClassicEditor
+      .create(document.querySelector('#mekanisme'))
       .then(editor => {
         console.log(editor);
       })

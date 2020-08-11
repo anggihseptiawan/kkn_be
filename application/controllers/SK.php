@@ -11,6 +11,7 @@ class SK extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['panduan'] = $this->db->get("panduan")->result_array();
         $data['persyaratan'] = $this->db->get("persyaratan")->result_array();
+        $data['mekanisme'] = $this->db->get("mekanisme")->result_array();
         $this->load->view('layouts/frontend/main_layout', $data);
     }
 }
