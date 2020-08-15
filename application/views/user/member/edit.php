@@ -1,27 +1,35 @@
 <main class="">
+
     <div class="container">
-        <div class="row  mt-5 justify-content-center">
 
-            <div class="col-md-8">
-                <div class="card-header py-3">
-                    <h2 class="m-0 font-weight-bold text-primaries ">Edit Profil</h2>
+    <div class="row  mt-5 justify-content-center">
 
-                </div>
-                <div class="row profil-container rounded ">
+            <div class="card">
+
+                <h2 class="card-header py-3m-0 font-weight-bold text-primaries ">Edit Profil</h2>
+                <div class="card-body ">
+
+
+                    <div class="col-lg profil-form ">
+                        <div class="widget-title-outer">
+                            <div class="text-center">
+                                <img src="<?= base_url(""); ?>assets/img/person.png" class="rounded-circle w-25  mb-4" alt="Account">
+                            </div>
+                        </div>
+                        
+                       
+
+ <div class="row profil-container rounded ">
 
 
                     <div class="col-lg-12 profil-form ">
-                        <div class="widget-title-outer">
-                            <div class="text-center">
-                                <img src="<?= base_url(""); ?>assets/img/man.png" class="rounded-circle w-25  mb-4" alt="Account">
-                            </div>
-                        </div>
+                        
                         <div class="widget-title-outer">
                             <h3 class="widget-title">Informasi Diri</h3>
                         </div>
                         <form class="user" action="<?= base_url("user/update"); ?>" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="nik" value="<?= $nik; ?>">
+                                <input type="text" class="form-control" name="nik" value="<?= $nik; ?>" readonly>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nama" value="<?= $nama; ?>">
@@ -49,7 +57,7 @@
 
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="username" name="username" value="<?= $username; ?>">
+                                <input type="text" class="form-control" id="username" name="username" value="<?= $username; ?>" readonly>
                             </div>
                             <div class="form-group">
                                 <input type="tel" class="form-control" name="nohp" value="<?= $nohp; ?>">
@@ -61,6 +69,14 @@
                             <button type="submit" class="btnSubmit w-100">Simpan Perubahan</button>
 
                         </form>
+
+
+                    </div>
+                </div>
+                            
+                           
+
+                       
 
 
                     </div>

@@ -1,6 +1,6 @@
 <h5>Tambah Panduan</h5>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <form action="<?= base_url("admin/panduan/save") ?>" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="judul">Judul</label>
@@ -8,18 +8,27 @@
             </div>
 
             <div class="form-group">
-                <label for="judul">Jenis Panduan</label>
-                <select class="form-control form-control-user " id="fm_jenis" name="jenis" required="true">
-                    <option value="Surat-Keterangan-Usaha">Surat Keterangan Usaha</option>
-                    <option value="Surat-Keterangan-Kartu-Keluarga">Surat Keterangan Kartu Keluarga</option>
-                    <option value="Surat-Keterangan-Kematian">Surat Keterangan Kematian</option>
-                    <option value="Surat-Keterangan-Pindah">Surat Keterangan Pindah</option>
-                    <option value="Surat-Keterangan-Domisili">Surat Keterangan Domisili</option>
-                    <option value="Surat-Keterangan-Tidak-Mampu">Surat Keterangan Tidak Mampu</option>
-                    <option value="Surat-Keterangan-Ahli-Waris">Surat Keterangan Ahli Waris</option>
+                <label for="judul">Jenis Surat</label>
+                <select class="form-control form-control-user " id="jenis" name="jenis" required="true">
+                    <option value=" ">Pilih Jenis Surat</option>
+                     <?= $this->session->flashdata('message'); ?>
+                    <?php foreach ($jenis as $key => $value) : ?>
+                    <option value="<?= str_replace(" ", "-", $value["nama"]); ?>"><?= str_replace("-", " ", $value["nama"]); ?></option>
+                    
+                    <?php endforeach; ?>
+                    
                 </select>
             </div>
-
+            <div class="form-group">
+                 <label for="judul">Persyaratan</label> 
+                <textarea id="persyaratan" name="persyaratan" placeholder="Masukan Persyaratan" required>
+                </textarea>
+            </div>
+             <div class="form-group"> 
+                 <label for="judul">Mekanisme</label>
+                <textarea id="mekanisme" name="mekanisme" placeholder="Masukan Mekanisme Pengajuan" required>
+                </textarea>
+            </div>
             <label for="judul">Upload File</label>
             <div class="custom-file mb-3">
                 <input type="file" class="custom-file-input" id="file" name="file" required>

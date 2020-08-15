@@ -18,8 +18,8 @@
 
                             <form class="user" method="post" action="<?= base_url('admin/auth'); ?>">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="email" placeholder="Masukkan email" name="email" value="<?= set_value('email'); ?>">
-                                    <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                                    <input type="email" class="form-control form-control-user" id="emails" placeholder="Masukkan email" name="emails" value="<?= set_value('emails'); ?>">
+                                    <?= form_error('emails', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">

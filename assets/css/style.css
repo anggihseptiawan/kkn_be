@@ -14,13 +14,19 @@ body {
 	color: var(--color-text);
 	overflow-x: hidden;
 }
+.img-profile {
+    height: 1.5rem;
+    width: 1.5rem;
+}
 /* main {
 	padding: 0 20px;
 } */
 main.main_content {
 	padding-top: 62px;
 }
-
+.mapouter{position:relative;text-align:right; }
+.gmap_canvas {overflow:hidden;background:none!important;height: 300px;} 
+iframe{height: 300px;}
 .jumbotron {
 	background-image: url(images/banner-main.jpg);
 	margin-bottom: 0;
@@ -43,11 +49,12 @@ h4 {
 }
 
 h5 {
-	background: rgba(0, 0, 0, 0.7);
+	
 	font-family: var(--serif-font);
+	font-size: calc(var(--base-font-size)*0.5);
 	font-weight: 600;
-	padding: 0.5rem;
-}
+	
+	}
 .widget-title-outer {
 	position: relative;
 }
@@ -110,7 +117,7 @@ span.first-line {
 	width: 2rem;
 	height: 2rem;
 	border-radius: 100%;
-	background: #3aaade;
+	background: #2d5c88;
 	padding: 0.35rem;
 }
 
@@ -167,7 +174,7 @@ section.auth .regis_form {
 }
 
 .bg-login-form {
-	background: rgba(58, 170, 222, 0.8) url(../img/logo3.png);
+	background: rgba(45, 92, 136, 0.8) url(../img/logo3.jpg);
 	background-size: cover;
 }
 .navbar-blog {
@@ -187,7 +194,7 @@ section.auth .regis_form {
 }
 .nav-blog-link link a.active {
 	padding: 0 0.5rem;
-	color: #3aaade;
+	color: #2d5c88;
 	background-color: rgba(255, 255, 255);
 }
 
@@ -207,7 +214,7 @@ a.link {
 }
 
 a:hover {
-	color: #3aaade;
+	color: #2d5c88;
 	text-decoration: none;
 }
 a {
@@ -233,8 +240,8 @@ a {
 }
 .btn-red {
 	color: #fff;
-	background-color: #3aaade;
-	border-color: #3aaade;
+	background-color: #2d5c88;
+	border-color: #2d5c88;
 }
 .btn-red:hover {
 	color: #fff;
@@ -248,7 +255,7 @@ a.icons {
 }
 
 a.bolded.active {
-	color: #3aaade !important;
+	color: #2d5c88 !important;
 }
 
 .btn-danger {
@@ -307,17 +314,17 @@ input[type="text"] {
 .btnSubmit {
 	font-weight: 600;
 	color: #fff;
-	background-color: rgba(58, 170, 222, 0.8);
+	background-color: rgba(45, 92, 136, 0.8);
 }
 .seablue {
-	color: rgba(58, 170, 222, 0.8);
+	color: rgba(45, 92, 136, 0.8);
 }
 .login-form .ForgetPwd,
 .BtnRegister {
 	background-color: white;
 	border-radius: 1rem;
-	border: solid rgba(58, 170, 222, 0.8);
-	color: rgba(58, 170, 222, 0.8);
+	border: solid rgba(45, 92, 136, 0.8);
+	color: rgba(45, 92, 136, 0.8);
 	font-weight: 600;
 	text-decoration: none;
 }
@@ -339,7 +346,7 @@ footer {
 
 .footers-login {
 	bottom: 0;
-	background: rgba(58, 170, 222, 0.6);
+	background: rgba(45, 92, 136, 0.6);
 	width: 100%;
 	height: 50px;
 	padding-left: 10px;
@@ -356,10 +363,10 @@ footer {
 	margin-right: 10px;
 }
 .head-footer {
-	background: rgba(58, 170, 222, 0.8);
+	background: rgba(45, 92, 136, 0.8);
 }
-.footers {
-	background: rgba(58, 170, 222, 1);
+.footers  {
+	background: rgba(45, 92, 136, 1);
 }
 a.icons:hover {
 	color: white;
@@ -375,8 +382,14 @@ a.icons:hover {
 .like {
 	margin-right: 10px;
 }
-
+.bg-counter{
+background: rgba(45, 92, 136, 1);
+padding: 10px;
+}
 @media (max-width: 768px) {
+	.img-side{
+		width: 	0px;
+	}
 	.logoku {
 		width: 5%;
 	}
@@ -449,7 +462,7 @@ a.icons:hover {
 .nav-pills .nav-links.active,
 .nav-pills .show > .nav-links {
 	color: rgba(255, 255, 255);
-	background-color: #3aaade;
+	background-color: #2d5c88;
 }
 .nav-span {
 	display: block;
@@ -610,4 +623,71 @@ a.icons:hover {
 .box__button:hover,
 .box__button:focus {
 	background-color: #0f3c4b;
+}
+.counter {
+    background-color:#f5f5f5;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+.iconbox{
+    background-color:#ffffff;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+.iconbox.iconleft.style2 {
+    padding: 0px 10px 0px 0px;
+    margin-bottom: 41px;
+}
+.iconbox.iconleft {
+    padding: 38px 26px 0px 0px;
+}
+.iconbox {
+    padding: 48px 45px 41px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+
+.iconbox.iconleft.style2 .box-header {
+    margin-right: 18px;
+}
+.iconbox.iconleft .box-header {
+    float: left;
+    margin-right: 25px;
+}
+.iconbox.iconleft .box-content {
+    overflow: hidden;
+}
+
+.iconbox.style2 .box-content .box-title {
+    margin: -1px 0px 9px 0px;
+}
+
+.iconbox .box-content .box-title {
+    margin-bottom: 8px;
 }

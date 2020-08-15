@@ -38,9 +38,10 @@
             <div class="row">
                 <nav class="col-md-12 navbar navbar-blog navbar-expand-lg navbar-light fixed-top" id="myHeader">
                     <img class="logoku" src="<?= base_url("assets"); ?>/img/logo2.png" alt="Logo Cikolelet">
-
-                    <a class="bolded pl-10" href="<?= base_url("/"); ?>">CIKOLELET</a>
-
+                    <?= $this->session->flashdata('message'); ?>
+                    <?php foreach ($desa as $key => $value) : ?>
+                    <a class="bolded pl-10" href="<?= base_url("/"); ?>"><?= strtoupper( $value['nama']); ?></a>
+                    <?php endforeach; ?>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menux">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -51,27 +52,29 @@
                                 <a class="nav-link bolded <?= $active == 'home' ? "active" : "" ?>" href="<?= base_url("home") ?>">Beranda</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link bolded <?= $active == 'sk' ? "active" : "" ?>" href="<?= base_url("SK") ?>">Surat Keterangan</a>
+                                <a class="nav-link bolded <?= $active == 'panduan' ? "active" : "" ?>" href="<?= base_url("panduan") ?>">Info Layanan</a>
                             </li>
 
                             <?php if ($this->session->userdata('email')) : ?>
 
                                 <!-- Khusus user yang login -->
-                                <li class="nav-item">
-                                    <div class="dropdown show">
-                                        <a class="nav-link bolded dropdown-toggle <?= $active == 'user' ? "active" : "" ?>" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               
+                                <li class="nav-item dropdown no-arrow">
+              
+                                    <a class="nav-link bolded dropdown-toggle <?= $active == 'user' ? "active" : "" ?>" href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <?= $user['nama_lengkap']; ?>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                                            <ul class="list-unstyled">
-                                                <li><a href="<?= base_url("user"); ?>">Profil Pengguna</a></li>
-                                                <li><a href="<?= base_url("perizinan/list_perizinan"); ?>">Daftar Pengajuan</a></li>
-                                                <li><a href="<?= base_url("perizinan"); ?>">Lakukan Pengajuan</a></li>
-                                                <li><a href="<?= base_url("auth/logout"); ?>">Log out</a></li>
+                                            <img class="img-profile rounded-circle" src="<?= base_url(""); ?>assets/img/person.png">
+                                    </a>
+              <!-- Dropdown - User Information -->
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                        <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="<?= base_url("user"); ?>">Profil Pengguna</a></li>
+                                                <li><a class="dropdown-item" href="<?= base_url("pengajuan/list_pengajuan"); ?>">Daftar Pengajuan</a></li>
+                                                <li><a class="dropdown-item" href="<?= base_url("pengajuan"); ?>">Lakukan Pengajuan</a></li>
+                                                <li><a class="dropdown-item"  data-toggle="modal" data-target="#logoutModal">Log out</a></li>
                                             </ul>
-                                        </div>
+                
                                     </div>
-
                                 </li>
 
                             <?php else : ?>
@@ -99,41 +102,63 @@
         <?php $this->load->view($page); ?>
     </main>
 
+<!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Log out</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Yakin ingin keluar</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="<?= base_url("auth/logout"); ?>">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
-    <!-- footer awal -->
+  <!-- footer awal -->
     <footer>
         <!-- Footer konten -->
+        <?= $this->session->flashdata('message'); ?>
+                <?php foreach ($desa as $key => $value) : ?>
+
         <div class="row head-footer py-3">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="widget">
                     <div class="widget-inner">
                         <div class="widget-title-outer">
-                            <h3 class="widget-title">Tentang Desa Cikolelet</h3>
+                            <h3 class="widget-title">Tentang Desa <?= $value['nama']; ?></h3>
                         </div>
                         <div class="d-flex">
                             <img class="logo-footer" src="<?= base_url("assets") ?>/img/logo2.png" alt="Logo Cikolelet">
-                            <p id="tentang" class="text-left">Cikolelet adalah sebuah desa di wilayah kecamatan Cinangka Kabupaten Serang, Banten, Indonesia.</p>
+                            <p id="tentang" class="text-left"><?= $value['deskripsi']; ?>Cikolelet adalah sebuah desa di wilayah kecamatan Cinangka Kabupaten Serang, Banten, Indonesia.</p>
                         </div>
                     </div><!-- end inner -->
                 </div><!-- end widget -->
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="widget">
                     <div class="widget-inner">
                         <div class="widget-title-outer">
                             <h3 class="widget-title">Alamat Desa</h3>
                         </div>
                         <div id="alamatdesa" class="text-left">
-                            <p class="mb-0">Desa Cikolelet, kecamatan Cinangka Kabupaten Serang, Banten, 61484.</p>
-                            <p class="mb-0">021000000.</p>
-                            <a href="mailto:info@Cikolelet.desa.id">info@Cikolelet.desa.id</a>
+                            <p class="mb-0"><?= $value['alamat']; ?></p>
+                            <p class="mb-0"><?= $value['telp']; ?></p>
+                            <a href="mailto:<?= $value['email']; ?>"><?= $value['email']; ?></a>
                         </div>
                     </div><!-- end inner -->
                 </div><!-- end widget -->
             </div>
         </div>
+        
 
 
         <div class="row footers py-3">
@@ -158,11 +183,11 @@
                 </div>
 
                 <div class="col-md-12 text-center">
-                    &copy; 2019 Copyright Layanan Desa Cikolelet | All rights reserved.
+                    &copy; 2019 Copyright Layanan Desa <?= $value['nama']; ?> | All rights reserved.
                 </div>
 
             </div>
-
+<?php endforeach; ?>
             <!-- link sosmed akhir   -->
         </div>
         <!-- Copyright -->
@@ -176,6 +201,105 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="<?= base_url("assets") ?>/js/jquery-3.4.1.min.js"></script>
     <script src="<?= base_url("assets") ?>/js/main.js"></script>
+    <script type="text/javascript">(function ($) {
+    $.fn.countTo = function (options) {
+        options = options || {};
+        
+        return $(this).each(function () {
+            // set options for current element
+            var settings = $.extend({}, $.fn.countTo.defaults, {
+                from:            $(this).data('from'),
+                to:              $(this).data('to'),
+                speed:           $(this).data('speed'),
+                refreshInterval: $(this).data('refresh-interval'),
+                decimals:        $(this).data('decimals')
+            }, options);
+            
+            // how many times to update the value, and how much to increment the value on each update
+            var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                increment = (settings.to - settings.from) / loops;
+            
+            // references & variables that will change with each update
+            var self = this,
+                $self = $(this),
+                loopCount = 0,
+                value = settings.from,
+                data = $self.data('countTo') || {};
+            
+            $self.data('countTo', data);
+            
+            // if an existing interval can be found, clear it first
+            if (data.interval) {
+                clearInterval(data.interval);
+            }
+            data.interval = setInterval(updateTimer, settings.refreshInterval);
+            
+            // initialize the element with the starting value
+            render(value);
+            
+            function updateTimer() {
+                value += increment;
+                loopCount++;
+                
+                render(value);
+                
+                if (typeof(settings.onUpdate) == 'function') {
+                    settings.onUpdate.call(self, value);
+                }
+                
+                if (loopCount >= loops) {
+                    // remove the interval
+                    $self.removeData('countTo');
+                    clearInterval(data.interval);
+                    value = settings.to;
+                    
+                    if (typeof(settings.onComplete) == 'function') {
+                        settings.onComplete.call(self, value);
+                    }
+                }
+            }
+            
+            function render(value) {
+                var formattedValue = settings.formatter.call(self, value, settings);
+                $self.html(formattedValue);
+            }
+        });
+    };
+    
+    $.fn.countTo.defaults = {
+        from: 0,               // the number the element should start at
+        to: 0,                 // the number the element should end at
+        speed: 1000,           // how long it should take to count between the target numbers
+        refreshInterval: 100,  // how often the element should be updated
+        decimals: 0,           // the number of decimal places to show
+        formatter: formatter,  // handler for formatting the value before rendering
+        onUpdate: null,        // callback method for every time the element is updated
+        onComplete: null       // callback method for when the element finishes updating
+    };
+    
+    function formatter(value, settings) {
+        return value.toFixed(settings.decimals);
+    }
+}(jQuery));
+
+jQuery(function ($) {
+  // custom formatting example
+  $('.count-number').data('countToOptions', {
+    formatter: function (value, options) {
+      return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+    }
+  });
+  
+  // start all the timers
+  $('.timer').each(count);  
+  
+  function count(options) {
+    var $this = $(this);
+    options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+    $this.countTo(options);
+  }
+});
+</script>
 </body>
 
 </html>

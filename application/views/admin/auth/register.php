@@ -14,8 +14,8 @@
                             <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control form-control-user" id="email" placeholder="Email Address" name="email" value="<?= set_value('email'); ?>">
-                            <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+                            <input type="email" class="form-control form-control-user" id="emails" placeholder="Email Address" name="emails" value="<?= set_value('emails'); ?>">
+                            <?= form_error('emails', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">

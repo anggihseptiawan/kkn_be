@@ -39,6 +39,7 @@
 					form.dispatchEvent(event);
 				}
 			};
+							
 
 		// letting the server side to know we are going to make an Ajax request
 		var ajaxFlag = document.createElement("input");

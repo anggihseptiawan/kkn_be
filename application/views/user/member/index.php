@@ -1,21 +1,20 @@
 <main class="">
+
     <div class="container">
-        <div class="row  mt-5 justify-content-center">
 
-            <div class="card col-md-8">
-                <div class="card-header py-3">
-                    <h2 class="m-0 font-weight-bold text-primaries ">Profil Pengguna</h2>
-
-                </div>
-                <div class="row profil-container rounded ">
-
-                    <div class="col-lg-12 profil-form">
+    <div class="row  mt-5 justify-content-center">
+        <div class="card  ">
+            <h2 class="card-header py-3m-0 font-weight-bold text-primaries ">Profil Pengguna</h2>
+                <div class="card-body">
+   
+                    
+                    <div class="col-lg profil-form">
                         <div class="text-center">
-                            <img src="<?= base_url(""); ?>assets/img/man.png" class="rounded-circle w-25  mb-4" alt="Account">
+                            <img src="<?= base_url(""); ?>assets/img/person.png" class="rounded-circle w-25  mb-4" alt="Account">
                         </div>
-                        <div class="widget-title-outer">
-                            <h3 class="widget-title">Informasi Diri</h3>
-                        </div>
+                            <div class="widget-title-outer">
+                                <h3 class="widget-title">Informasi Diri</h3>
+                            </div>
                         <table class="table  table-borderless table-striped table-condensed ">
 
                             <tbody>
@@ -77,12 +76,14 @@
                             </tbody>
 
                         </table>
-                        <!-- <a href="<? //= base_url("user/edit") 
-                                        ?>" class="btnSubmit w-100 d-block text-center">Edit Profil</a> -->
-
+                         <!-- <a href="<?= base_url("user/edit") 
+                                        ?>" class="btnSubmit w-100 d-block text-center">Edit Profil</a>  -->
+<!-- <a href="#" class="btnSubmit w-100 d-block text-center">Edit Profile</a> -->
                     </div>
 
                 </div>
+            </div>
+           
             </div>
         </div>
 

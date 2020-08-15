@@ -31,7 +31,7 @@
             <nav class="col-md-12 navbar navbar-blog  navbar-expand-lg navbar-light " id="myHeader">
                 <img class="logoku" src="<?= base_url("assets") ?>/img/logo2.png" alt="Logo Cikolelet">
 
-                <a class="bolded pl-10" href="#">CIKOLELET</a>
+                <a class="bolded pl-10" href="<?= base_url("/"); ?>">CIKOLELET</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menux">
                     <span class="navbar-toggler-icon"></span>
@@ -40,11 +40,12 @@
                 <div class="collapse navbar-collapse" id="menux">
                     <ul class="nav nav-pills  flex-column flex-lg-row  ml-auto" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url("auth") ?>">Masuk</a>
+                            <a class="nav-link bolded" href="<?= base_url("auth") ?>">Masuk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url("auth/register") ?>">Daftar</a>
+                            <a class="nav-link bolded" href="<?= base_url("auth/register") ?>">Daftar</a>
                         </li>
+                       
                     </ul>
                 </div>
             </nav>
