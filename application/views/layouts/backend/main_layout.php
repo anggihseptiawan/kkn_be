@@ -39,7 +39,7 @@
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon ">
           <i class="fas fa-university"></i>
-        </div><?= $this->session->flashdata('message'); ?>
+        </div>
                     <?php foreach ($desa as $key => $value) : ?>
 
 
@@ -144,7 +144,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?= base_url("admin/user/index"); ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>

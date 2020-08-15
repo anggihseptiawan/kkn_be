@@ -5,7 +5,7 @@
          <div class="card shadow mb-4">
              <!-- Card Header - Dropdown -->
              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                 <h6 class="m-0 font-weight-bold text-primary">Profil Admin</h6>
+                 <h5 class="m-0 font-weight-bold text-primary">Profil Admin</h5>
                  
              </div>
              <!-- Card Body -->
@@ -37,8 +37,8 @@
                             </tbody>
                         </table>
 
-                        <!-- //<a href="<?= base_url("admin/user/edit"); ?>" class="btnSubmit btn-primary w-100 d-block text-center">Edit Profile</a>
- -->                        <!-- <a href="<? //= base_url("user/edit") 
+                        <a href="<?= base_url("admin/user/changepassword"); ?>" class="btn btn-primary w-100 d-block text-center">Ubah Password</a>
+                        <!-- <a href="<? //= base_url("user/edit") 
                                         ?>" class="btnSubmit w-100 d-block text-center">Edit Profil</a> -->
                 </div>
             </div>

@@ -38,7 +38,7 @@
             <div class="row">
                 <nav class="col-md-12 navbar navbar-blog navbar-expand-lg navbar-light fixed-top" id="myHeader">
                     <img class="logoku" src="<?= base_url("assets"); ?>/img/logo2.png" alt="Logo Cikolelet">
-                    <?= $this->session->flashdata('message'); ?>
+                   
                     <?php foreach ($desa as $key => $value) : ?>
                     <a class="bolded pl-10" href="<?= base_url("/"); ?>"><?= strtoupper( $value['nama']); ?></a>
                     <?php endforeach; ?>
@@ -126,7 +126,7 @@
   <!-- footer awal -->
     <footer>
         <!-- Footer konten -->
-        <?= $this->session->flashdata('message'); ?>
+
                 <?php foreach ($desa as $key => $value) : ?>
 
         <div class="row head-footer py-3">

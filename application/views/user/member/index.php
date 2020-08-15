@@ -76,8 +76,7 @@
                             </tbody>
 
                         </table>
-                         <!-- <a href="<?= base_url("user/edit") 
-                                        ?>" class="btnSubmit w-100 d-block text-center">Edit Profil</a>  -->
+                         <a href="<?= base_url("user/changepassword")?>" class="btnSubmit w-100 d-block text-center">Ubah Password</a> 
 <!-- <a href="#" class="btnSubmit w-100 d-block text-center">Edit Profile</a> -->
                     </div>
 
