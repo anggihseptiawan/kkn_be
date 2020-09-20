@@ -55,7 +55,7 @@
                                     <p class="mb-0"><?= $user['nama_lengkap']; ?></p>
                                     <small class="d-block">Jenis : <?= $value['jenis']; ?> </small>
                                 </div>
-                                <p class="float-right badge <?= $value['status'] == 0 ? "badge-primary" : "badge-success" ?>"><?= $value['status'] == 0 ? "Menuggu" : "Diterima" ?></p>
+                                <p class="float-right badge <?= $value['status'] == 0 ? "badge-primary" : "badge-success" ?>"><?= $value['status'] == 0 ? "Menuggu" : "Disetujui" ?></p>
                             </a>
                         <?php endforeach; ?>
                     <?php else : ?>

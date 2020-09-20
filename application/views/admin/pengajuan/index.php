@@ -15,7 +15,7 @@
                 </div>
                
          
-                            <p class="float-right badge badge-primary <?= $value['status'] == 0  ?>"><?= $value['status'] == 0 ? "Menuggu" : "Diterima" ?></p>
+                            <p class="float-right badge badge-primary <?= $value['status'] == 0  ?>"><?= $value['status'] == 0 ? "Menuggu" : "Disetujui" ?></p>
             </a>
         <?php endforeach; ?>
     <?php else : ?>

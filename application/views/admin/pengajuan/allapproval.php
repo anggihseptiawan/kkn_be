@@ -13,7 +13,7 @@
                 <?php if ($value['status'] == 0) : ?>
                                 <p class="float-right badge badge-primary">Menuggu</p>
                             <?php elseif ($value['status'] == 1) : ?>
-                                <p class="float-right badge badge-success">Diterima</p>
+                                <p class="float-right badge badge-success">Disetujui</p>
                             <?php else : ?>
                                 <p class="float-right badge badge-danger">Ditolak</p>
                             <?php endif; ?>
