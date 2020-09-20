@@ -6,8 +6,7 @@
                 <label for="judul">Judul Panduan</label>
                 <input type="text" class="form-control" id="judul" name="judul" value="<?= $file['judul'] ?>" placeholder="masukkan judul" required>
             </div>
-
-            <div class="form-group">
+            
                 <label for="jenis">Jenis Surat</label>
                 <select class="form-control form-control-user " id="jenis" name="jenis" required="true">
                   

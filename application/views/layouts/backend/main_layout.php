@@ -63,7 +63,13 @@
           <span>Dashboard</span></a>
       </li>
 
-<!-- Jenis-->
+      <li class="nav-item <?= $active == 'home' ? "active" : ""; ?>">
+        <a class="nav-link" href="<?= base_url("/admin/desa"); ?>">
+          <i class="fas fa-fw fa-address-card"></i>
+          <span>Profil Desa</span></a>
+      </li>
+
+      <!-- Jenis-->
       <li class="nav-item <?= $active == 'jenis' ? "active" : ""; ?>">
         <a class="nav-link" href="<?= base_url("admin/jenis") ?>">
           <i class="fas fa-fw fa-book"></i>
@@ -144,7 +150,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?= base_url("admin/user/index"); ?>">
+                <a class="dropdown-item" href="<?= base_url("admin/user/"); ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -216,7 +222,7 @@
       </div>
     </div>
 
-  <!-- Bootstrap core JavaScript-->
+<!-- Bootstrap core JavaScript-->
   <script src="<?= base_url('assets') ?>/vendor/jquery/jquery.min.js"></script>
   <script src="<?= base_url('assets') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

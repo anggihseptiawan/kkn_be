@@ -1,4 +1,4 @@
-<h5>Detail Pemohon</h5>
+<h5>Detail Pengajuan</h5>
 <p>Nama : <?= $pemohon['nama_lengkap']; ?></p>
 <p>File pengajuan : <a href="<?= base_url() . str_replace(' ', '_', $pengajuan['path']) ?>" download>Download</a> </p>
 

@@ -109,5 +109,6 @@
         <p><?= $value['telp']; ?></p>
         </div>
         <div class="mapouter"><div class="gmap_canvas "><iframe class="w-100 pt-4 pb-4" id="gmap_canvas" src="<?= $value['gmaps']; ?>" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style></style></div>  </div>
+        </div>  </div>
 <?php endforeach; ?>
                 

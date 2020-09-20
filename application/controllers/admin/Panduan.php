@@ -30,6 +30,7 @@ class Panduan extends CI_Controller
         $data['active'] = 'panduan';
         $data['user'] = $this->db->get_where('admin', ['emails' => $this->session->userdata("emails")])->row_array();
         $data['jenis'] = $this->db->order_by('nama' , 'ASC')->get("jenis")->result_array();
+        $data['desa'] = $this->db->get("profil_desa")->result_array();
         $this->load->view('layouts/backend/main_layout', $data);
     }
 

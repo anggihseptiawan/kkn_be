@@ -15,16 +15,38 @@ class Pengajuan extends CI_Controller
         $data['page'] = 'admin/pengajuan/index';
         $data['active'] = 'pengajuan';
         $data['pengajuan'] = $this->db->order_by('jenis','ASC')->get('pengajuan')->result_array();
-
+$data['pengajuan'] = $this->db->where('status =', 0)->order_by('jenis asc , created_at desc')->get('pengajuan')->result_array();
         $data['user'] = $this->db->get_where('admin', ['emails' => $this->session->userdata("emails")])->row_array();
         $data['desa'] = $this->db->get("profil_desa")->result_array();
         
         $this->load->view('layouts/backend/main_layout', $data);
     }
 
+    public function allapproval()
+    {
+        $data['page'] = 'admin/pengajuan/allapproval';
+        $data['active'] = 'pengajuan';
+        $data['pengajuan'] = $this->db->order_by('jenis','ASC')->get('pengajuan')->result_array();
+        $data['active'] = 'pengajuan';
+        $data['user'] = $this->db->get_where('admin', ['emails' => $this->session->userdata("emails")])->row_array();
+        $data['desa'] = $this->db->get("profil_desa")->result_array();
+        $this->load->view('layouts/backend/main_layout', $data);
+    }
+
+
     public function detail_pengajuan($user_id, $pengajuan_id)
     {
         $data['page'] = 'admin/pengajuan/detail';
+        $data['active'] = 'pengajuan';
+        $data['pemohon'] = $this->db->where(['user_id' => $user_id])->get('user')->row_array();
+        $data['pengajuan'] = $this->db->where(['pengajuan_id' => $pengajuan_id])->get('pengajuan')->row_array();
+        $data['user'] = $this->db->get_where('admin', ['emails' => $this->session->userdata("emails")])->row_array();
+        $data['desa'] = $this->db->get("profil_desa")->result_array();
+        $this->load->view('layouts/backend/main_layout', $data);
+    }
+     public function detail_approval($user_id, $pengajuan_id)
+    {
+        $data['page'] = 'admin/pengajuan/detail_approval';
         $data['active'] = 'pengajuan';
         $data['pemohon'] = $this->db->where(['user_id' => $user_id])->get('user')->row_array();
         $data['pengajuan'] = $this->db->where(['pengajuan_id' => $pengajuan_id])->get('pengajuan')->row_array();
@@ -68,6 +90,7 @@ class Pengajuan extends CI_Controller
 
         if ($update) {
             die(json_encode(['success' => true, 'error' => false, 'message' => $_FILES["files"]["name"]]));
+            redirect('admin/pengajuan');
         }
     }
 

@@ -8,10 +8,10 @@
                         <div class="list-group-item list-group-item-action">
                             <div class="descrption float-left">
                                 <p class="mb-0">Pengajuan <span class="font-weight-bold"><?= str_replace('-', ' ', $value['jenis']); ?></span></p>
-                                <small class="d-block">Tanggal Permohonan : <?= $value['created_at']; ?> </small>
+                                <small class="d-block">Tanggal Pengajuan : <?= $value['created_at']; ?> </small>
 
                                 <?php if ($value['status'] == 1) : ?>
-                                    <p class="mb-0">Berkas Perizinan : <a href="<?= base_url() . str_replace(" ", '_', $value["path_admin"]);  ?>" download>Download disini</a> </p>
+                                    <p class="mb-0">Surat : <a href="<?= base_url() . str_replace(" ", '_', $value["path_admin"]);  ?>" download>Download disini</a> </p>
                                 <?php elseif ($value['status'] == 2) : ?>
                                     <p class="mb-0">Keterangan : <?= $value['feedback']; ?> </p>
                                 <?php endif; ?>
@@ -26,7 +26,7 @@
                         </div>
                     <?php endforeach; ?>
                 <?php else : ?>
-                    <div class="alert alert-primary">Belum ada pengajuan</div>
+                    <div class="alert alert-primary">Belum ada pengajuan baru</div>
                 <?php endif; ?>
             </div>
         </div>

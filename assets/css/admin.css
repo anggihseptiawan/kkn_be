@@ -189,3 +189,6 @@ padding: 10px;
     margin-bottom: 0;
     text-align: center;
 }
+.mapouter{position:relative;text-align:right; }
+.gmap_canvas {overflow:hidden;background:none!important;height: 300px;} 
+iframe{height: 300px;}

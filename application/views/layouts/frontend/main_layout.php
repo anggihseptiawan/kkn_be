@@ -128,6 +128,7 @@
         <!-- Footer konten -->
 
                 <?php foreach ($desa as $key => $value) : ?>
+                
 
         <div class="row head-footer py-3">
             <div class="col-md-6">
@@ -201,6 +202,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="<?= base_url("assets") ?>/js/jquery-3.4.1.min.js"></script>
     <script src="<?= base_url("assets") ?>/js/main.js"></script>
+    
     <script type="text/javascript">(function ($) {
     $.fn.countTo = function (options) {
         options = options || {};
