@@ -49,6 +49,7 @@ class Desa extends CI_Controller
 				"email" => $this->input->post("email"),
 				"total_pria" => $this->input->post("total_pria"),
 				"total_wanita" => $this->input->post("total_wanita"),
+				"total_penduduk" => $this->input->post("total_penduduk"),
 				"gmaps" => $this->input->post("gmaps"),
 				"deskripsi" => $this->input->post("deskripsi"),
                
@@ -58,10 +59,10 @@ class Desa extends CI_Controller
     
 
         if ($update) {
-            $this->session->set_flashdata('add', '<div class="alert alert-success text-center">Sukses ubah data</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-success text-center">Sukses ubah data</div>');
             redirect('admin/desa/');
         } else {
-            $this->session->set_flashdata('add', '<div class="alert alert-danger text-center">Gagal ubah data</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger text-center">Gagal ubah data</div>');
             redirect('admin/desa');
         }
     }

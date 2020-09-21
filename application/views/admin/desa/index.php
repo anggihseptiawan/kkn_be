@@ -30,6 +30,10 @@
             <input type="number" class="form-control" id="total_wanita" name="total_wanita" value="<?= $value['total_wanita']; ?>" placeholder="<?= $value['total_wanita']; ?>" disabled>
         </div>
         <div class="form-group">
+            <label for="nama">Jumlah Penduduk</label>
+            <input type="number" class="form-control" id="total_penduduk" name="total_penduduk" value="<?= $value['total_penduduk']; ?>"  disabled>
+        </div>
+        <div class="form-group">
             <label for="nama">Deskripsi</label>
             <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?= $value['deskripsi']; ?>" placeholder="" disabled><?= $value['deskripsi']; ?></textarea>
         </div>

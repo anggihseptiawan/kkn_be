@@ -23,11 +23,16 @@
         </div>
         <div class="form-group">
             <label for="total_pria">Jumlah Penduduk Pria</label>
-            <input type="number" class="form-control" id="total_pria" name="total_pria" value="<?= $value['total_pria']; ?>" placeholder="<?= $value['total_pria']; ?>" required>
+            <input type="number" class="form-control" id="total_pria" name="total_pria" value="<?= $value['total_pria']; ?>" onkeyup="sum();" placeholder="<?= $value['total_pria']; ?>" required>
         </div>
         <div class="form-group">
             <label for="total_wanita">Jumlah Penduduk Wanita</label>
-            <input type="number" class="form-control" id="total_wanita" name="total_wanita" value="<?= $value['total_wanita']; ?>" placeholder="<?= $value['total_wanita']; ?>" required>
+            <input type="number" class="form-control" id="total_wanita" name="total_wanita" value="<?= $value['total_wanita']; ?>" onkeyup="sum();" placeholder="<?= $value['total_wanita']; ?>" required>
+        </div>
+        <div class="form-group">
+            <label for="nama">Jumlah Penduduk</label>
+            <input type="number" class="form-control" id="total_penduduk" name="total_penduduk" value="<?= $value['total_penduduk']; ?>"  placeholder="<?= $value['total_penduduk']; ?>" required>
+            
         </div>
         <div class="form-group">
             <label for="deskripsi">Deskripsi</label>

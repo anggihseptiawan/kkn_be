@@ -63,13 +63,12 @@
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
-
       <li class="nav-item <?= $active == 'home' ? "active" : ""; ?>">
         <a class="nav-link" href="<?= base_url("/admin/desa"); ?>">
           <i class="fas fa-fw fa-address-card"></i>
           <span>Profil Desa</span></a>
       </li>
-
+   
       <!-- Jenis-->
       <li class="nav-item <?= $active == 'jenis' ? "active" : ""; ?>">
         <a class="nav-link" href="<?= base_url("admin/jenis") ?>">
@@ -92,7 +91,7 @@
           <i class="fas fa-fw fa-file-signature"></i>
           <span>Daftar pengajuan</span></a>
       </li>
-
+      
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline mt-3">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -224,6 +223,7 @@
     </div>
 
 <!-- Bootstrap core JavaScript-->
+
   <script src="<?= base_url('assets') ?>/vendor/jquery/jquery.min.js"></script>
   <script src="<?= base_url('assets') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -373,5 +373,14 @@ jQuery(function ($) {
   } );
 </script>
 </body>
-
+<script>
+function sum() {
+      var txtFirstNumberValue = document.getElementById('total_pria').value;
+      var txtSecondNumberValue = document.getElementById('total_wanita').value;
+      var result = parseInt(txtFirstNumberValue) + parseInt(txtSecondNumberValue);
+      if (!isNaN(result)) {
+         document.getElementById('total_penduduk').value = result;
+      }
+}
+</script>
 </html>
