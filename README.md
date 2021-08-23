@@ -8,7 +8,7 @@ http://localhost/kkn/auth
 
 Demo account
 
-email:deomuser@gmail.com
+email:demouser@gmail.com
 
 pass:12345678
 
